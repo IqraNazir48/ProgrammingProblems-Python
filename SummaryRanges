@@ -1,0 +1,35 @@
+class SummaryRanges{
+    public static List<String> summaryRanges(int[] nums) {
+        ArrayList<String> list=new ArrayList<>();
+        if(nums.length==0 ){
+            return list;
+        }
+        int pointer1=0;
+        int i=1;
+        for(;i<nums.length;i++){
+            if(nums[i]!=nums[i-1]+1){
+                if(nums[pointer1]==nums[i-1]){
+                    list.add(""+nums[pointer1]);
+                }
+                else{
+                    list.add(nums[pointer1]+"->"+nums[i-1]);
+                }
+                pointer1=i;
+            }
+        }
+        if(nums[pointer1]==nums[nums.length-1]){
+            list.add(""+nums[pointer1]);
+        }
+        else{
+            list.add(nums[pointer1]+"->"+nums[nums.length-1]);
+        }
+        return list;
+    }
+    public static void main(String[] args){
+        int[] nums = {0,1,2,4,5,7};
+        List<String> result=summaryRanges(nums);
+        for(String s: result){
+            System.out.println(s);
+        }
+    }
+}
