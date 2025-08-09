@@ -1,0 +1,31 @@
+class PowerOfTwo{
+    public static boolean isPowerOfTwo(int n) {
+        if(n==1 || n==2){
+            return true;
+        }
+        else if(n<0){
+            return false;
+        }
+        else if(n==0 || n%2!=0){
+            return false;
+        }
+        
+        int power=4;
+        for(int i=0;i<100 || power>n ;i++){
+            if(power==n){
+                return true;
+            }
+            power=power+power;
+        }
+        return false;
+    }
+    public static void main(String[] args){
+        int n=1;
+        if(isPowerOfTwo(n)){
+            System.out.println(n+" is power of two.");
+        }
+        else{
+            System.out.println(n+ " is not power of two.");
+        }
+    }
+}
