@@ -1,3 +1,4 @@
+# its time complexity not that good
 
 def sorted_strings(strs):
     for i in range(len(strs)):
